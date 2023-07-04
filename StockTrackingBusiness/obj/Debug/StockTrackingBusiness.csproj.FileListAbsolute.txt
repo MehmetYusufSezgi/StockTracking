@@ -1,0 +1,14 @@
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\obj\Debug\StockTrackingBusiness.csproj.AssemblyReference.cache
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\obj\Debug\StockTrackingBusiness.csproj.CoreCompileInputs.cache
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\StockTrackingBusiness.dll
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\StockTrackingBusiness.pdb
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\StockTrackingDataAccess.dll
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\StockTrackingEntities.dll
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\EntityFramework.dll
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\StockTrackingDataAccess.pdb
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\StockTrackingDataAccess.dll.config
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\StockTrackingEntities.pdb
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\EntityFramework.xml
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\obj\Debug\StockTrackingBusiness.csproj.CopyComplete
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\obj\Debug\StockTrackingBusiness.dll
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\obj\Debug\StockTrackingBusiness.pdb

@@ -1,0 +1,6 @@
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingEntities\bin\Debug\StockTrackingEntities.dll
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingEntities\bin\Debug\StockTrackingEntities.pdb
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingEntities\obj\Debug\StockTrackingEntities.csproj.AssemblyReference.cache
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingEntities\obj\Debug\StockTrackingEntities.csproj.CoreCompileInputs.cache
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingEntities\obj\Debug\StockTrackingEntities.dll
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingEntities\obj\Debug\StockTrackingEntities.pdb
