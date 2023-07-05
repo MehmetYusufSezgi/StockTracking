@@ -53,11 +53,13 @@
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDAL.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
+    <Compile Include="Abstract\IDBExceptionDAL.cs" />
     <Compile Include="Abstract\ILogDAL.cs" />
     <Compile Include="Abstract\IProductDAL.cs" />
     <Compile Include="Abstract\IUserDAL.cs" />
     <Compile Include="Concrete\EntityFramework\EFCategoryDAL.cs" />
     <Compile Include="Concrete\EntityFramework\EFEntityRepositoryBase.cs" />
+    <Compile Include="Concrete\EntityFramework\EFDBExceptionDAL.cs" />
     <Compile Include="Concrete\EntityFramework\EFLogDAL.cs" />
     <Compile Include="Concrete\EntityFramework\EFProductDAL.cs" />
     <Compile Include="Concrete\EntityFramework\EFUserDAL.cs" />

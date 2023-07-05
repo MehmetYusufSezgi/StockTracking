@@ -18,10 +18,27 @@ namespace StockTracking.AdminGUI
             txtboxMainUsername.Text = currentUserName;
             string name = currentUserName;
         }
+        private Form currentForm = null;
+        private void changeForm(Form subForm)
+        {
+            if (currentForm != null)
+            {
+                currentForm.Close();
+            }
+            currentForm = subForm;
+            subForm.TopLevel = false;
+            subForm.FormBorderStyle = FormBorderStyle.None;
+            subForm.Dock = DockStyle.Fill;
+            panelSubForm.Controls.Add(subForm);
+            panelSubForm.Tag = subForm;
+            subForm.BringToFront();
+            subForm.Show();
+        }
 
         private void buttonUserControls_Click(object sender, EventArgs e)
         {
-            UserGUIMain userGUIMain = new UserGUIMain(txtboxMainUsername.Text);
+            string currentUserName = txtboxMainUsername.Text;
+            UserGUIMain userGUIMain = new UserGUIMain(currentUserName);
             userGUIMain.Show();
             this.Close();
         }
@@ -38,6 +55,11 @@ namespace StockTracking.AdminGUI
             AdminGUIMain adminGUIMain = new AdminGUIMain(currentUserName);
             adminGUIMain.Show();
             this.Close();
+        }
+
+        private void buttonExceptions_Click(object sender, EventArgs e)
+        {
+            changeForm(new AdminGUIExceptions());
         }
     }
 }

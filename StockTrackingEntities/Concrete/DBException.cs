@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace StockTrackingEntities.Concrete
 {
-    public class Log:IEntity
+    public class DBException:IEntity
     {
-        public int LogId { get; set; }
-        public string LogUser { get; set; }
-        public string LogMessage { get; set; }
-
+        public int DBExceptionId { get; set; }
+        public string DBExceptionUser { get; set; }
+        public string DBExceptionMessage { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using StockTrackingBusiness.Abstract;
+﻿using StockTrackingBusiness;
+using StockTrackingBusiness.Abstract;
 using StockTrackingBusiness.Concrete;
 using StockTrackingDataAccess.Concrete.EntityFramework;
 using StockTrackingEntities.Concrete;
@@ -43,6 +44,7 @@ namespace StockTracking.AdminGUI
         private void LoadUsers()
         {
             dgvList.DataSource = _userService.GetAll();
+            dgvList.Columns["UserId"].Visible = false;
         }
         private void LoadUserTypes()
         {
@@ -55,23 +57,28 @@ namespace StockTracking.AdminGUI
                 cmbboxUserType.DataSource = userTypes;
             }
         }
+        ExceptionHandler exceptionHandler = new ExceptionHandler();
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            _userService.Add(new User
+            exceptionHandler.TryCatcher(() =>
             {
-                UserName = txtboxUserName.Text,
-                UserMail = txtboxMail.Text,
-                UserDBName = txtboxDBName.Text,
-                Password = txtboxPassword.Text,
-                PhoneNumber = txtboxPhoneNumber.Text,
-                UserType = cmbboxUserType.SelectedValue.ToString()
-            });
-            LoadUsers();
-            MessageBox.Show("Kullanıcı Eklendi.");
-            string currentName = NameCarrier.LoggedName;
-            _logService.Add(new Log
-            {
-                LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı ekledi : {txtboxUserName.Text.ToUpper()}"
+                _userService.Add(new User
+                {
+                    UserName = txtboxUserName.Text,
+                    UserMail = txtboxMail.Text,
+                    UserDBName = txtboxDBName.Text,
+                    Password = txtboxPassword.Text,
+                    PhoneNumber = txtboxPhoneNumber.Text,
+                    UserType = cmbboxUserType.SelectedValue.ToString()
+                });
+                LoadUsers();
+                MessageBox.Show("Kullanıcı Eklendi.");
+                string currentName = NameCarrier.LoggedName;
+                _logService.Add(new Log
+                {
+                    LogUser = currentName,
+                    LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı ekledi : {txtboxUserName.Text.ToUpper()}"
+                });
             });
         }
     }

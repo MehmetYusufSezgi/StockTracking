@@ -29,6 +29,8 @@ namespace StockTracking.UserGUI
         private void LoadProducts()
         {
             dgvList.DataSource = _productService.GetAll();
+            dgvList.Columns["ProductId"].Visible = false;
+            dgvList.Columns["ProductPopularity"].Visible = false;
         }
 
         private void txtboxUsername_TextChanged(object sender, EventArgs e)

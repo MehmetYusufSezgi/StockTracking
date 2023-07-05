@@ -14,5 +14,6 @@ namespace StockTrackingDataAccess.Concrete.EntityFramework
         public DbSet<Category> Categories { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Log> Logs { get; set; }
+        public DbSet<DBException> DBExceptions { get; set; }
     }
 }

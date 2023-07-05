@@ -1,4 +1,5 @@
-﻿using StockTrackingBusiness.Abstract;
+﻿using StockTrackingBusiness;
+using StockTrackingBusiness.Abstract;
 using StockTrackingBusiness.Concrete;
 using StockTrackingDataAccess.Concrete.EntityFramework;
 using StockTrackingEntities.Concrete;
@@ -26,27 +27,32 @@ namespace StockTracking.UserGUI
         IProductService _productService;
         ICategoryService _categoryService;
         ILogService _logService;
+        ExceptionHandler exceptionHandler = new ExceptionHandler();
         private void buttonSell_Click(object sender, EventArgs e)
         {
             DataUpdating();
-            _productService.Update(new Product
+            exceptionHandler.TryCatcher(() =>
             {
-                ProductId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
-                CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
-                ProductName = txtboxProductName.Text,
-                StockCode = txtboxStock.Text,
-                Barcode = txtboxBarcode.Text,
-                ProductAmount = (Convert.ToInt32(txtBoxAmount.Text)-1),
-                ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
-                ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
-            });
-            MessageBox.Show("Ürün Satıldı.");
-            DataUpdating();
-            LoadProducts();
-            string currentName = NameCarrier.LoggedName;
-            _logService.Add(new Log
-            {
-                LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} bir ürün sattı : {txtboxProductName.Text.ToUpper()}"
+                _productService.Update(new Product
+                {
+                    ProductId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
+                    CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
+                    ProductName = txtboxProductName.Text,
+                    StockCode = txtboxStock.Text,
+                    Barcode = txtboxBarcode.Text,
+                    ProductAmount = (Convert.ToInt32(txtBoxAmount.Text) - 1),
+                    ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
+                    ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
+                });
+                MessageBox.Show("Ürün Satıldı.");
+                DataUpdating();
+                LoadProducts();
+                string currentName = NameCarrier.LoggedName;
+                _logService.Add(new Log
+                {
+                    LogUser = currentName,
+                    LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} bir ürün sattı : {txtboxProductName.Text.ToUpper()}"
+                });
             });
         }
 
@@ -58,6 +64,8 @@ namespace StockTracking.UserGUI
         private void LoadProducts()
         {
             dgvList.DataSource = _productService.GetAll();
+            dgvList.Columns["ProductId"].Visible = false;
+            dgvList.Columns["ProductPopularity"].Visible = false;
         }
         private void LoadCategories()
         {

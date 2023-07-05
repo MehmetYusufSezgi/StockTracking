@@ -25,6 +25,7 @@ namespace StockTracking.AdminGUI
         private void LoadUsers()
         {
             dgvList.DataSource = _userService.GetAll();
+            dgvList.Columns["UserId"].Visible = false;
         }
         private void AdminGUIListUser_Load(object sender, EventArgs e)
         {

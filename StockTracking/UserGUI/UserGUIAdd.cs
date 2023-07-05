@@ -1,4 +1,5 @@
-﻿using StockTrackingBusiness.Abstract;
+﻿using StockTrackingBusiness;
+using StockTrackingBusiness.Abstract;
 using StockTrackingBusiness.Concrete;
 using StockTrackingDataAccess.Concrete.EntityFramework;
 using StockTrackingEntities.Concrete;
@@ -29,6 +30,8 @@ namespace StockTracking.UserGUI
         private void LoadProducts()
         {
             dgvList.DataSource = _productService.GetAll();
+            dgvList.Columns["ProductId"].Visible = false;
+            dgvList.Columns["ProductPopularity"].Visible = false;
         }
         private void LoadCategories()
         {
@@ -36,25 +39,29 @@ namespace StockTracking.UserGUI
             cmbboxCategory.DisplayMember = "CategoryName";
             cmbboxCategory.ValueMember = "CategoryId";
         }
-        
+        ExceptionHandler exceptionHandler = new ExceptionHandler();
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            _productService.Add(new Product
+            exceptionHandler.TryCatcher(() =>
             {
-                CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
-                ProductName = txtboxProductName.Text,
-                StockCode = txtboxStock.Text,
-                Barcode = txtboxBarcode.Text,
-                ProductAmount = Convert.ToInt32(txtBoxAmount.Text),
-                ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
-                ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
-            });
-            LoadProducts();
-            MessageBox.Show("Ürün Kaydedildi.");
-            string currentName = NameCarrier.LoggedName;
-            _logService.Add(new Log
-            {
-                LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} ürün ekledi : {txtboxProductName.Text.ToUpper()} ({txtBoxAmount.Text}) "
+                _productService.Add(new Product
+                {
+                    CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
+                    ProductName = txtboxProductName.Text,
+                    StockCode = txtboxStock.Text,
+                    Barcode = txtboxBarcode.Text,
+                    ProductAmount = Convert.ToInt32(txtBoxAmount.Text),
+                    ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
+                    ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
+                });
+                LoadProducts();
+                MessageBox.Show("Ürün Kaydedildi.");
+                string currentName = NameCarrier.LoggedName;
+                _logService.Add(new Log
+                {
+                    LogUser = currentName,
+                    LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} ürün ekledi : {txtboxProductName.Text.ToUpper()} ({txtBoxAmount.Text}) "
+                });
             });
         }
 

@@ -32,3 +32,4 @@ C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTr
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIListUser.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUILogs.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIModifyUser.resources
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIExceptions.resources

@@ -39,6 +39,7 @@
             this.txtboxMainUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonExceptions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -66,6 +67,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel3.Controls.Add(this.buttonExceptions);
             this.panel3.Controls.Add(this.buttonUserControls);
             this.panel3.Controls.Add(this.buttonExit);
             this.panel3.Controls.Add(this.buttonAdminControls);
@@ -108,7 +110,7 @@
             this.buttonAdminControls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdminControls.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonAdminControls.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.buttonAdminControls.Location = new System.Drawing.Point(0, 189);
+            this.buttonAdminControls.Location = new System.Drawing.Point(0, 115);
             this.buttonAdminControls.Name = "buttonAdminControls";
             this.buttonAdminControls.Size = new System.Drawing.Size(184, 94);
             this.buttonAdminControls.TabIndex = 1;
@@ -159,6 +161,20 @@
             this.panel2.Size = new System.Drawing.Size(889, 76);
             this.panel2.TabIndex = 7;
             // 
+            // buttonExceptions
+            // 
+            this.buttonExceptions.FlatAppearance.BorderSize = 0;
+            this.buttonExceptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExceptions.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonExceptions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
+            this.buttonExceptions.Location = new System.Drawing.Point(3, 246);
+            this.buttonExceptions.Name = "buttonExceptions";
+            this.buttonExceptions.Size = new System.Drawing.Size(181, 94);
+            this.buttonExceptions.TabIndex = 5;
+            this.buttonExceptions.Text = "HATA KAYITLARI";
+            this.buttonExceptions.UseVisualStyleBackColor = true;
+            this.buttonExceptions.Click += new System.EventHandler(this.buttonExceptions_Click);
+            // 
             // AdminGUIMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,5 +209,6 @@
         private System.Windows.Forms.TextBox txtboxMainUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button buttonExceptions;
     }
 }

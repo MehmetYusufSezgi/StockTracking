@@ -1,4 +1,5 @@
-﻿using StockTrackingBusiness.Abstract;
+﻿using StockTrackingBusiness;
+using StockTrackingBusiness.Abstract;
 using StockTrackingBusiness.Concrete;
 using StockTrackingDataAccess.Concrete.EntityFramework;
 using StockTrackingEntities.Concrete;
@@ -27,45 +28,44 @@ namespace StockTracking.AdminGUI
         private void LoadUsers()
         {
             dgvList.DataSource = _userService.GetAll();
+            dgvList.Columns["UserId"].Visible = false;
         }
         private void LoadUserTypes()
         {
             using (var context = new StockTrackingContext())
             {
-                // Retrieve UserTypes from the Users table
                 var userTypes = context.Users.Select(u => u.UserType).Distinct().ToList();
-
-                // Create a BindingList<string> and add user types to it
                 var bindingUserTypes = new BindingList<string>();
                 foreach (var userType in userTypes)
                 {
                     bindingUserTypes.Add(userType);
                 }
-
-                // Bind BindingList<string> to the ComboBox
                 cmbboxUserType.DataSource = bindingUserTypes;
             }
         }
-
-
+        ExceptionHandler exceptionHandler = new ExceptionHandler();
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            _userService.Update(new User
+            exceptionHandler.TryCatcher(() =>
             {
-                UserId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
-                UserName = txtboxUserName.Text,
-                UserMail = txtboxMail.Text,
-                UserDBName = txtboxDBName.Text,
-                Password = txtboxPassword.Text,
-                PhoneNumber = txtboxPhoneNumber.Text,
-                UserType = cmbboxUserType.SelectedValue.ToString()
-            });
-            LoadUsers();
-            MessageBox.Show("Kullanıcı Güncellendi.");
-            string currentName = NameCarrier.LoggedName;
-            _logService.Add(new Log
-            {
-                LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı güncelledi : {txtboxUserName.Text.ToUpper()}"
+                _userService.Update(new User
+                {
+                    UserId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
+                    UserName = txtboxUserName.Text,
+                    UserMail = txtboxMail.Text,
+                    UserDBName = txtboxDBName.Text,
+                    Password = txtboxPassword.Text,
+                    PhoneNumber = txtboxPhoneNumber.Text,
+                    UserType = cmbboxUserType.SelectedValue.ToString()
+                });
+                LoadUsers();
+                MessageBox.Show("Kullanıcı Güncellendi.");
+                string currentName = NameCarrier.LoggedName;
+                _logService.Add(new Log
+                {
+                    LogUser = currentName,
+                    LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı güncelledi : {txtboxUserName.Text.ToUpper()}"
+                });
             });
         }
 
@@ -92,22 +92,26 @@ namespace StockTracking.AdminGUI
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            _userService.Delete(new User
+            exceptionHandler.TryCatcher(() =>
             {
-                UserId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value.ToString()),
-                UserName = txtboxUserName.Text,
-                UserMail = txtboxMail.Text,
-                UserDBName = txtboxDBName.Text,
-                Password = txtboxPassword.Text,
-                PhoneNumber = txtboxPhoneNumber.Text,
-                UserType = cmbboxUserType.SelectedValue.ToString()
-            });
-            MessageBox.Show("Kullanıcı Silindi.");
-            LoadUsers();
-            string currentName = NameCarrier.LoggedName;
-            _logService.Add(new Log
-            {
-                LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı sildi : {txtboxUserName.Text.ToUpper()}"
+                _userService.Delete(new User
+                {
+                    UserId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value.ToString()),
+                    UserName = txtboxUserName.Text,
+                    UserMail = txtboxMail.Text,
+                    UserDBName = txtboxDBName.Text,
+                    Password = txtboxPassword.Text,
+                    PhoneNumber = txtboxPhoneNumber.Text,
+                    UserType = cmbboxUserType.SelectedValue.ToString()
+                });
+                MessageBox.Show("Kullanıcı Silindi.");
+                LoadUsers();
+                string currentName = NameCarrier.LoggedName;
+                _logService.Add(new Log
+                {
+                    LogUser = currentName,
+                    LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı sildi : {txtboxUserName.Text.ToUpper()}"
+                });
             });
         }
 

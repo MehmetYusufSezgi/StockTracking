@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,13 +43,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IDBExceptionService.cs" />
     <Compile Include="Abstract\ILogService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
+    <Compile Include="Concrete\DBExceptionManager.cs" />
     <Compile Include="Concrete\LogManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
+    <Compile Include="ExceptionHandler.cs" />
+    <Compile Include="NameCarrier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

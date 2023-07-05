@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace StockTrackingBusiness.Abstract
 {
-    public interface ILogService
+    public interface IDBExceptionService
     {
-        void Add(Log log);
-        List<Log> GetLogsByName(string logUser);
-        List<Log> GetAll();
+        void Add(DBException dbexception);
+        List<DBException> GetAll();
     }
 }

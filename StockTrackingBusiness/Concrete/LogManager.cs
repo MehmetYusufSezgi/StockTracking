@@ -27,9 +27,9 @@ namespace StockTrackingBusiness.Concrete
             return _logDAL.GetAll();
         }
 
-        public object GetLogsByName(string logMessage)
+        public object GetLogsByName(string logUser)
         {
-            return _logDAL.GetAll(p => p.LogMessage.ToLower().Contains(logMessage.ToLower()));
+            return _logDAL.GetAll(p => p.LogUser.ToLower().Contains(logUser.ToLower()));
         }
 
         List<Log> ILogService.GetLogsByName(string logMessage)
