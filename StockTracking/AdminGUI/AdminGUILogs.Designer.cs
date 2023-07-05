@@ -46,6 +46,7 @@
             this.txtboxSearch.Name = "txtboxSearch";
             this.txtboxSearch.Size = new System.Drawing.Size(309, 30);
             this.txtboxSearch.TabIndex = 13;
+            this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged_1);
             // 
             // panel1
             // 

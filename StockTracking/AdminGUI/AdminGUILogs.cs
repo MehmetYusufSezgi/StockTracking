@@ -27,7 +27,13 @@ namespace StockTracking.AdminGUI
             LoadLogs();
             dgvList.Columns[0].Visible = false;
         }
-        private void txtboxSearch_TextChanged(object sender, EventArgs e)
+        
+        private void LoadLogs()
+        {
+            dgvList.DataSource = _logService.GetAll();
+        }
+
+        private void txtboxSearch_TextChanged_1(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtboxSearch.Text))
             {
@@ -37,11 +43,6 @@ namespace StockTracking.AdminGUI
             {
                 LoadLogs();
             }
-        }
-
-        private void LoadLogs()
-        {
-            dgvList.DataSource = _logService.GetAll();
         }
     }
 }
