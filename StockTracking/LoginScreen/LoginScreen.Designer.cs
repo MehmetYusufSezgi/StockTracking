@@ -135,11 +135,13 @@
             this.txtboxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtboxPassword.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtboxPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.txtboxPassword.Location = new System.Drawing.Point(93, 147);
+            this.txtboxPassword.Location = new System.Drawing.Point(93, 129);
             this.txtboxPassword.Multiline = true;
             this.txtboxPassword.Name = "txtboxPassword";
+            this.txtboxPassword.PasswordChar = '●';
             this.txtboxPassword.Size = new System.Drawing.Size(309, 30);
             this.txtboxPassword.TabIndex = 5;
+            this.txtboxPassword.TextChanged += new System.EventHandler(this.txtboxPassword_TextChanged);
             // 
             // txtboxUsername
             // 
@@ -156,7 +158,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(89)))));
-            this.panel4.Location = new System.Drawing.Point(55, 179);
+            this.panel4.Location = new System.Drawing.Point(55, 161);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(360, 1);
             this.panel4.TabIndex = 3;
@@ -164,7 +166,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(55, 142);
+            this.pictureBox3.Location = new System.Drawing.Point(55, 124);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(32, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

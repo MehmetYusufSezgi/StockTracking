@@ -23,6 +23,13 @@ namespace StockTrackingDataAccess.Concrete.EntityFramework
                 context.SaveChanges();
             }
         }
+        /*public TEntity Get(int Id)
+        {
+            using (TContext context = new TContext())
+            {
+                return context.Set<TEntity>().FirstOrDefault(s=>s.Id == Id);
+            }
+        }*/
 
         public void Delete(TEntity entity)
         {
@@ -38,7 +45,7 @@ namespace StockTrackingDataAccess.Concrete.EntityFramework
         {
             using (TContext context = new TContext())
             {
-                return context.Set<TEntity>().SingleOrDefault(filter);
+                return context.Set<TEntity>().FirstOrDefault(filter);
             }
         }
 
@@ -64,12 +71,6 @@ namespace StockTrackingDataAccess.Concrete.EntityFramework
                 context.SaveChanges();
             }
         }
-        public bool ValidateUser(string username, string password)
-        {
-            using (TContext context = new TContext())
-            {
-                return context.Set<User>().Any(u => u.UserName == username && u.Password == password);
-            }
-        }
+        
     }
 }

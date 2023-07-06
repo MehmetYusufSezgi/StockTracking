@@ -106,35 +106,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserGUI\UserGUIAdd.cs">
+    <Compile Include="UserGUI\UserGUIOperations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserGUI\UserGUIAdd.Designer.cs">
-      <DependentUpon>UserGUIAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserGUI\UserGUIList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserGUI\UserGUIList.Designer.cs">
-      <DependentUpon>UserGUIList.cs</DependentUpon>
+    <Compile Include="UserGUI\UserGUIOperations.Designer.cs">
+      <DependentUpon>UserGUIOperations.cs</DependentUpon>
     </Compile>
     <Compile Include="UserGUI\UserGUIMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserGUI\UserGUIMain.Designer.cs">
       <DependentUpon>UserGUIMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserGUI\UserGUIModify.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserGUI\UserGUIModify.Designer.cs">
-      <DependentUpon>UserGUIModify.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserGUI\UserGUISell.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserGUI\UserGUISell.Designer.cs">
-      <DependentUpon>UserGUISell.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminGUI\AdminGUIAddUser.resx">
       <DependentUpon>AdminGUIAddUser.cs</DependentUpon>
@@ -169,20 +151,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserGUI\UserGUIAdd.resx">
-      <DependentUpon>UserGUIAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserGUI\UserGUIList.resx">
-      <DependentUpon>UserGUIList.cs</DependentUpon>
+    <EmbeddedResource Include="UserGUI\UserGUIOperations.resx">
+      <DependentUpon>UserGUIOperations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserGUI\UserGUIMain.resx">
       <DependentUpon>UserGUIMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserGUI\UserGUIModify.resx">
-      <DependentUpon>UserGUIModify.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserGUI\UserGUISell.resx">
-      <DependentUpon>UserGUISell.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

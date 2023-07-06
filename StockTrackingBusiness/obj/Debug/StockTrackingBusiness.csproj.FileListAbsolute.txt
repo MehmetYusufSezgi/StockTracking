@@ -12,3 +12,6 @@ C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\obj\Debug\StockTrackingBusiness.csproj.CopyComplete
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\obj\Debug\StockTrackingBusiness.dll
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\obj\Debug\StockTrackingBusiness.pdb
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\StockTrackingBusiness.dll.config
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTrackingBusiness\bin\Debug\EntityFramework.SqlServer.xml

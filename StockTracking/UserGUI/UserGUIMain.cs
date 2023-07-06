@@ -34,35 +34,20 @@ namespace StockTracking
             subForm.BringToFront();
             subForm.Show();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            changeForm(new UserGUISell());
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            changeForm(new UserGUIAdd());
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            changeForm(new UserGUIList());
-        }
-
-        private void buttonModifyProducts_Click(object sender, EventArgs e)
-        {
-            changeForm(new UserGUIModify());
-        }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+        private void buttonGoBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var loginScreen = new LoginScreen();
+            loginScreen.ShowDialog();
+            loginScreen.Dispose();
+        }
+        private void buttonProductFunctions_Click(object sender, EventArgs e)
+        {
+            changeForm(new UserGUIOperations());
         }
     }
 }

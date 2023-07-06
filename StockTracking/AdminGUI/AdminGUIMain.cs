@@ -37,6 +37,7 @@ namespace StockTracking.AdminGUI
             panelSubForm.Tag = subForm;
             subForm.BringToFront();
             subForm.Show();
+            //Application.OpenForms
         }
         private void buttonListUsers_Click(object sender, EventArgs e)
         {

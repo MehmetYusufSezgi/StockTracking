@@ -1,5 +1,8 @@
 ﻿using StockTracking.AdminGUI;
+using StockTrackingBusiness.Abstract;
+using StockTrackingBusiness.Concrete;
 using StockTrackingDataAccess.Concrete.EntityFramework;
+using StockTrackingEntities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,16 +18,16 @@ namespace StockTracking
 {
     public partial class LoginScreen : Form
     {
+        public string CurrentUserName { get; private set; }
         public LoginScreen()
         {
             InitializeComponent();
         }
-
+        
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
-        public string CurrentUserName { get; private set; }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string username = txtboxUsername.Text;
@@ -41,15 +44,19 @@ namespace StockTracking
                         CurrentUserName = user.UserName;
                         if (user.UserType == "admin")
                         {
-                            AdminGUIMenu adminGUIMain = new AdminGUIMenu(CurrentUserName);
-                            adminGUIMain.Show();
+                            this.Hide();
+                            var adminGUIMain = new AdminGUIMenu(CurrentUserName);
+                            adminGUIMain.ShowDialog();
                             NameCarrier.LoggedName = CurrentUserName;
+                            adminGUIMain.Dispose();
                         }
                         else if (user.UserType == "kullanici")
                         {
-                            UserGUIMain userGUIMain = new UserGUIMain(CurrentUserName);
-                            userGUIMain.Show();
+                            this.Hide();
+                            var userGUIMain = new UserGUIMain(CurrentUserName);
+                            userGUIMain.ShowDialog();
                             NameCarrier.LoggedName = CurrentUserName;
+                            userGUIMain.Dispose();
                         }
                     }
                 }
@@ -68,11 +75,16 @@ namespace StockTracking
                 return user != null;
             }
         }
-
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        
+
+        private void txtboxPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
