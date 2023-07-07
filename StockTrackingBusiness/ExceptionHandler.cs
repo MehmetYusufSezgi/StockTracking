@@ -30,7 +30,7 @@ namespace StockTrackingBusiness
             {
                 _exceptionService.Add(new DBException
                 {
-                    DBExceptionUser = NameCarrier.LoggedName,
+                    DBExceptionUser = StaticCarrier.LoggedName,
                     DBExceptionMessage = ex.Message,
                 });
                 MessageBox.Show("Bir hata meydana geldi. Veri tabanına kaydedildi.");

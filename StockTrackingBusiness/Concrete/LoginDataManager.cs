@@ -17,6 +17,11 @@ namespace StockTrackingBusiness.Concrete
             _loginDataDAL = loginDataDAL;
         }
 
+        public LoginData GetCheckState()
+        {
+            return _loginDataDAL.Get(p => p.IsCheckedLOGIN);
+        }
+
         public LoginData GetNameByString(string checkingName)
         {
             return _loginDataDAL.Get(p => p.CurrentNameLOGIN.Contains(checkingName));

@@ -12,7 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 //Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DBStockTrack;Integrated Security=True
 namespace StockTracking
@@ -23,22 +22,32 @@ namespace StockTracking
         public LoginScreen()
         {
             InitializeComponent();
-            _loginDataService = new LoginDataManager(new EFLoginDataDAL());
-            using(var context = new StockTrackingContext())
+            if (StaticCarrier.isFirstLoad)
             {
-                var loginChecking = context.LoginData.FirstOrDefault(u => u.IsCheckedLOGIN == true);
-                if (loginChecking.IsCheckedLOGIN)
+                rememberingMethod();
+                StaticCarrier.isFirstLoad = false;
+            }
+        }
+        ILoginDataService _loginDataService;
+
+        public void rememberingMethod()
+        {
+            _loginDataService = new LoginDataManager(new EFLoginDataDAL());
+            using (var context = new StockTrackingContext())
+            {
+                var loginhelp = context.LoginData.FirstOrDefault(p => p.IsCheckedLOGIN);
+                if (loginhelp != null && loginhelp.IsCheckedLOGIN == true)
                 {
-                    CurrentUserName = loginChecking.CurrentNameLOGIN;
+                    CurrentUserName = loginhelp.CurrentNameLOGIN;
                     var userType = context.Users.FirstOrDefault(u => u.UserName == CurrentUserName);
-                    if(userType.UserType == "admin")
+                    if (userType.UserType == "admin")
                     {
                         this.Hide();
                         var adminGUIMenu = new AdminGUIMenu(CurrentUserName);
                         adminGUIMenu.ShowDialog();
                         adminGUIMenu.Dispose();
                     }
-                    else if(userType.UserType == "kullanici")
+                    else if (userType.UserType == "kullanici")
                     {
                         this.Hide();
                         var userGUIMain = new UserGUIMain(CurrentUserName);
@@ -48,7 +57,6 @@ namespace StockTracking
                 }
             }
         }
-        ILoginDataService _loginDataService;
         
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -60,11 +68,10 @@ namespace StockTracking
                 using (var context = new StockTrackingContext())
                 {
                     var user = context.Users.FirstOrDefault(u => u.UserName.ToLower() == username.ToLower());
-                    var loginChecking = context.LoginData.FirstOrDefault(u => u.IsCheckedLOGIN);
                     if (user != null)
                     {
                         CurrentUserName = user.UserName;
-                        NameCarrier.LoggedName = CurrentUserName;
+                        StaticCarrier.LoggedName = CurrentUserName;
                         if (chkboxRememberMe.Checked)
                         {
                             _loginDataService.Update(new LoginData
@@ -116,5 +123,6 @@ namespace StockTracking
         {
             Application.Exit();
         }
+
     }
 }

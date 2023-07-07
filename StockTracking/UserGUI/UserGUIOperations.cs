@@ -62,7 +62,7 @@ namespace StockTracking.UserGUI
                     });
                     MessageBox.Show("Ürün Güncellendi.");
                     LoadProducts();
-                    string currentName = NameCarrier.LoggedName;
+                    string currentName = StaticCarrier.LoggedName;
                     _logService.Add(new Log
                     {
                         LogUser = currentName,
@@ -83,7 +83,7 @@ namespace StockTracking.UserGUI
                     });
                     LoadProducts();
                     MessageBox.Show("Ürün Kaydedildi.");
-                    string currentName = NameCarrier.LoggedName;
+                    string currentName = StaticCarrier.LoggedName;
                     _logService.Add(new Log
                     {
                         LogUser = currentName,
@@ -115,7 +115,7 @@ namespace StockTracking.UserGUI
                 });
                 MessageBox.Show("Ürün Silindi.");
                 LoadProducts();
-                string currentName = NameCarrier.LoggedName;
+                string currentName = StaticCarrier.LoggedName;
                 _logService.Add(new Log
                 {
                     LogUser = currentName,
@@ -182,7 +182,7 @@ namespace StockTracking.UserGUI
             });
             MessageBox.Show("Ürün Satıldı.");
             LoadProducts();
-            string currentName = NameCarrier.LoggedName;
+            string currentName = StaticCarrier.LoggedName;
             _logService.Add(new Log
             {
                 LogUser = currentName,

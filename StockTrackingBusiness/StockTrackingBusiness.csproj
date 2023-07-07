@@ -65,7 +65,7 @@
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\UserManager.cs" />
     <Compile Include="ExceptionHandler.cs" />
-    <Compile Include="NameCarrier.cs" />
+    <Compile Include="StaticCarrier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

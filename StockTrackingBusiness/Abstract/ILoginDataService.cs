@@ -9,6 +9,7 @@ namespace StockTrackingBusiness.Abstract
 {
     public interface ILoginDataService
     {
+        LoginData GetCheckState();
         LoginData GetNameByString(string checkingName);
         LoginData GetPasswordByString(string checkingName);
         void Update(LoginData loginData);

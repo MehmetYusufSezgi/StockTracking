@@ -64,7 +64,7 @@ namespace StockTracking.AdminGUI
                     });
                     LoadUsers();
                     MessageBox.Show("Kullanıcı Güncellendi.");
-                    string currentName = NameCarrier.LoggedName;
+                    string currentName = StaticCarrier.LoggedName;
                     _logService.Add(new Log
                     {
                         LogUser = currentName,
@@ -84,7 +84,7 @@ namespace StockTracking.AdminGUI
                     });
                     LoadUsers();
                     MessageBox.Show("Kullanıcı Eklendi.");
-                    string currentName = NameCarrier.LoggedName;
+                    string currentName = StaticCarrier.LoggedName;
                     _logService.Add(new Log
                     {
                         LogUser = currentName,
@@ -131,7 +131,7 @@ namespace StockTracking.AdminGUI
                 });
                 MessageBox.Show("Kullanıcı Silindi.");
                 LoadUsers();
-                string currentName = NameCarrier.LoggedName;
+                string currentName = StaticCarrier.LoggedName;
                 _logService.Add(new Log
                 {
                     LogUser = currentName,

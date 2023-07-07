@@ -44,11 +44,11 @@ namespace StockTracking
         {
             using(var context = new StockTrackingContext())
             {
-                var user = context.Users.FirstOrDefault(u => u.UserName.ToLower() == NameCarrier.LoggedName.ToLower());
+                var user = context.Users.FirstOrDefault(u => u.UserName.ToLower() == StaticCarrier.LoggedName.ToLower());
                 if(user.UserType == "admin")
                 {
                     this.Hide();
-                    var adminGUIMenu = new AdminGUIMenu(NameCarrier.LoggedName);
+                    var adminGUIMenu = new AdminGUIMenu(StaticCarrier.LoggedName);
                     adminGUIMenu.ShowDialog();
                     adminGUIMenu.Dispose();
                 }
