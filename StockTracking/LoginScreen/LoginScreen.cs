@@ -22,11 +22,11 @@ namespace StockTracking
         public LoginScreen()
         {
             InitializeComponent();
-            if (StaticCarrier.isFirstLoad)
+            /*if (StaticCarrier.isFirstLoad)
             {
                 rememberingMethod();
                 StaticCarrier.isFirstLoad = false;
-            }
+            }*/
         }
         ILoginDataService _loginDataService;
 
@@ -72,7 +72,7 @@ namespace StockTracking
                     {
                         CurrentUserName = user.UserName;
                         StaticCarrier.LoggedName = CurrentUserName;
-                        if (chkboxRememberMe.Checked)
+                        /*if (chkboxRememberMe.Checked)
                         {
                             _loginDataService.Update(new LoginData
                             {
@@ -85,9 +85,11 @@ namespace StockTracking
                         {
                             _loginDataService.Update(new LoginData
                             {
+                                CurrentNameLOGIN = "",
+                                CurrentPasswordLOGIN = "",
                                 IsCheckedLOGIN = false
                             });
-                        }
+                        }*/
                         if (user.UserType == "admin")
                         {
                             this.Hide();
