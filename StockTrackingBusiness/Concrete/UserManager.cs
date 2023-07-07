@@ -31,6 +31,11 @@ namespace StockTrackingBusiness.Concrete
             return _userDAL.GetAll();
         }
 
+        public User GetUserByName(string existingUser)
+        {
+            return _userDAL.Get(p => p.UserName.Equals(existingUser));
+        }
+
         public List<User> GetUsersByName(string userName)
         {
             return _userDAL.GetAll(p => p.UserName.ToLower().Contains(userName.ToLower()));

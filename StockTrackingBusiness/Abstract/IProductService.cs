@@ -12,8 +12,8 @@ namespace StockTrackingBusiness.Abstract
         void Add(Product product);
         void Delete(Product product);
         List<Product> GetAll();
-
-        List<Product> GetProductsByName(string productName);
+        Product GetProductByBarcode(string barcode);
+        List<Product> GetProductsByBarcode(string barcode);
         void Update(Product product);
     }
 }

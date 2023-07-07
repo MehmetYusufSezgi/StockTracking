@@ -42,20 +42,19 @@ namespace StockTracking
                     if (user != null)
                     {
                         CurrentUserName = user.UserName;
+                        NameCarrier.LoggedName = CurrentUserName;
                         if (user.UserType == "admin")
                         {
                             this.Hide();
-                            var adminGUIMain = new AdminGUIMenu(CurrentUserName);
-                            adminGUIMain.ShowDialog();
-                            NameCarrier.LoggedName = CurrentUserName;
-                            adminGUIMain.Dispose();
+                            var adminGUIMenu = new AdminGUIMenu(CurrentUserName);
+                            adminGUIMenu.ShowDialog();
+                            adminGUIMenu.Dispose();
                         }
                         else if (user.UserType == "kullanici")
                         {
                             this.Hide();
                             var userGUIMain = new UserGUIMain(CurrentUserName);
                             userGUIMain.ShowDialog();
-                            NameCarrier.LoggedName = CurrentUserName;
                             userGUIMain.Dispose();
                         }
                     }

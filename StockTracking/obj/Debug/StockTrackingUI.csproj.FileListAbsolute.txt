@@ -1,6 +1,5 @@
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTrackingUI.csproj.AssemblyReference.cache
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTrackingUI.csproj.SuggestedBindingRedirects.cache
-C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIMain.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.LoginScreen.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.Properties.Resources.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.UserGUIMain.resources
@@ -25,9 +24,9 @@ C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTr
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.pdb
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIMenu.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIAddUser.resources
-C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIListUser.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUILogs.resources
-C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIModifyUser.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIExceptions.resources
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\bin\Debug\StockTrackingBusiness.dll.config
 C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.UserGUI.UserGUIOperations.resources
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUILognExc.resources
+C:\Users\msezg\OneDrive\Masaüstü\StockTracking\StockTracking\obj\Debug\StockTracking.AdminGUI.AdminGUIOperations.resources

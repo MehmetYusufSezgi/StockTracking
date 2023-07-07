@@ -23,6 +23,7 @@ namespace StockTracking.UserGUI
             _productService = new ProductManager(new EFProductDAL());
             _categoryService = new CategoryManager(new EFCategoryDAL());
             _logService = new LogManager(new EFLogDAL());
+            
         }
         IProductService _productService;
         ICategoryService _categoryService;
@@ -39,30 +40,56 @@ namespace StockTracking.UserGUI
             cmbboxCategory.DisplayMember = "CategoryName";
             cmbboxCategory.ValueMember = "CategoryId";
         }
-        
         ExceptionHandler exceptionHandler = new ExceptionHandler();
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            string barcode = txtboxBarcode.Text;
+            Product existingProduct = _productService.GetProductByBarcode(barcode);
             exceptionHandler.TryCatcher(() =>
             {
-                _productService.Add(new Product
+                if (existingProduct != null)
                 {
-                    CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
-                    ProductName = txtboxProductName.Text,
-                    StockCode = txtboxStock.Text,
-                    Barcode = txtboxBarcode.Text,
-                    ProductAmount = Convert.ToInt32(txtBoxAmount.Text),
-                    ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
-                    ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
-                });
-                LoadProducts();
-                MessageBox.Show("Ürün Kaydedildi.");
-                string currentName = NameCarrier.LoggedName;
-                _logService.Add(new Log
+                    _productService.Update(new Product
+                    {
+                        ProductId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
+                        CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
+                        ProductName = txtboxProductName.Text,
+                        StockCode = txtboxStock.Text,
+                        Barcode = txtboxBarcode.Text,
+                        ProductAmount = Convert.ToInt32(txtBoxAmount.Text),
+                        ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
+                        ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
+                    });
+                    MessageBox.Show("Ürün Güncellendi.");
+                    LoadProducts();
+                    string currentName = NameCarrier.LoggedName;
+                    _logService.Add(new Log
+                    {
+                        LogUser = currentName,
+                        LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} ürün güncelledi : {txtboxProductName.Text.ToUpper()}"
+                    });
+                }
+                else
                 {
-                    LogUser = currentName,
-                    LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} ürün ekledi : {txtboxProductName.Text.ToUpper()} ({txtBoxAmount.Text}) "
-                });
+                    _productService.Add(new Product
+                    {
+                        CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
+                        ProductName = txtboxProductName.Text,
+                        StockCode = txtboxStock.Text,
+                        Barcode = txtboxBarcode.Text,
+                        ProductAmount = Convert.ToInt32(txtBoxAmount.Text),
+                        ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
+                        ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
+                    });
+                    LoadProducts();
+                    MessageBox.Show("Ürün Kaydedildi.");
+                    string currentName = NameCarrier.LoggedName;
+                    _logService.Add(new Log
+                    {
+                        LogUser = currentName,
+                        LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} ürün ekledi : {txtboxProductName.Text.ToUpper()} ({txtBoxAmount.Text}) "
+                    });
+                }
             });
         }
 
@@ -82,31 +109,6 @@ namespace StockTracking.UserGUI
 
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            exceptionHandler.TryCatcher(() =>
-            {
-                _productService.Update(new Product
-                {
-                    ProductId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
-                    CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
-                    ProductName = txtboxProductName.Text,
-                    StockCode = txtboxStock.Text,
-                    Barcode = txtboxBarcode.Text,
-                    ProductAmount = Convert.ToInt32(txtBoxAmount.Text),
-                    ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
-                    ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
-                });
-                MessageBox.Show("Ürün Güncellendi.");
-                LoadProducts();
-                string currentName = NameCarrier.LoggedName;
-                _logService.Add(new Log
-                {
-                    LogUser = currentName,
-                    LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} ürün güncelledi : {txtboxProductName.Text.ToUpper()}"
-                });
-            });
-        }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
@@ -163,6 +165,41 @@ namespace StockTracking.UserGUI
                 txtboxSellingPrice.Text = dgvList.CurrentRow.Cells[6].Value.ToString();
                 txtboxBuyingPrice.Text = dgvList.CurrentRow.Cells[7].Value.ToString();
             }
+        }
+
+        private void txtboxSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtboxSearch.Text))
+            {
+                dgvList.DataSource = _productService.GetProductsByBarcode(txtboxSearch.Text);
+            }
+            else
+            {
+                LoadProducts();
+            }
+        }
+
+        private void buttonSell_Click(object sender, EventArgs e)
+        {
+            _productService.Update(new Product
+            {
+                ProductId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
+                CategoryId = Convert.ToInt32(cmbboxCategory.SelectedValue),
+                ProductName = txtboxProductName.Text,
+                StockCode = txtboxStock.Text,
+                Barcode = txtboxBarcode.Text,
+                ProductAmount = Convert.ToInt32(txtBoxAmount.Text)-Convert.ToInt32(txtboxSellingAmount.Text),
+                ProductBuyingPrice = Convert.ToDecimal(txtboxBuyingPrice.Text),
+                ProductSellingPrice = Convert.ToDecimal(txtboxSellingPrice.Text)
+            });
+            MessageBox.Show("Ürün Satıldı.");
+            LoadProducts();
+            string currentName = NameCarrier.LoggedName;
+            _logService.Add(new Log
+            {
+                LogUser = currentName,
+                LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} ürün satıldı : {txtboxProductName.Text.ToUpper()}"
+            });
         }
     }
 }

@@ -13,35 +13,41 @@ using System.Windows.Forms;
 
 namespace StockTracking.AdminGUI
 {
-    public partial class AdminGUIListUser : Form
+    public partial class AdminGUILognExc : Form
     {
-        public AdminGUIListUser()
+        public AdminGUILognExc()
         {
             InitializeComponent();
             _userService = new UserManager(new EFUserDAL());
+            _logService = new LogManager(new EFLogDAL());
+            _exceptionService = new DBExceptionManager(new EFDBExceptionDAL());
         }
         IUserService _userService;
+        ILogService _logService;
+        IDBExceptionService _exceptionService;
 
-        private void LoadUsers()
+        private void LoadLognEx()
         {
-            dgvList.DataSource = _userService.GetAll();
-            dgvList.Columns["UserId"].Visible = false;
+            dgvListException.DataSource = _exceptionService.GetAll();
+            dgvListLog.DataSource = _logService.GetAll();
         }
         private void AdminGUIListUser_Load(object sender, EventArgs e)
         {
-            LoadUsers();
+            LoadLognEx();
         }
 
         private void txtboxSearch_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtboxSearch.Text))
             {
-                dgvList.DataSource = _userService.GetUsersByName(txtboxSearch.Text);
+                dgvListException.DataSource = _exceptionService.GetExceptionsByName(txtboxSearch.Text);
+                dgvListLog.DataSource = _logService.GetLogsByName(txtboxSearch.Text);
             }
             else
             {
-                LoadUsers();
+                LoadLognEx();
             }
         }
+
     }
 }

@@ -1,4 +1,7 @@
-﻿using StockTracking.UserGUI;
+﻿using StockTracking.AdminGUI;
+using StockTracking.UserGUI;
+using StockTrackingDataAccess.Concrete.EntityFramework;
+using StockTrackingEntities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static StockTracking.LoginScreen;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace StockTracking
 {
@@ -34,20 +39,47 @@ namespace StockTracking
             subForm.BringToFront();
             subForm.Show();
         }
-        private void buttonExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
         private void buttonGoBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var loginScreen = new LoginScreen();
-            loginScreen.ShowDialog();
-            loginScreen.Dispose();
+            using(var context = new StockTrackingContext())
+            {
+                var user = context.Users.FirstOrDefault(u => u.UserName.ToLower() == NameCarrier.LoggedName.ToLower());
+                if(user.UserType == "admin")
+                {
+                    this.Hide();
+                    var adminGUIMenu = new AdminGUIMenu(NameCarrier.LoggedName);
+                    adminGUIMenu.ShowDialog();
+                    adminGUIMenu.Dispose();
+                }
+                else
+                {
+                    this.Hide();
+                    var loginScreen = new LoginScreen();
+                    loginScreen.ShowDialog();
+                    loginScreen.Dispose();
+                }
+            }
+
         }
         private void buttonProductFunctions_Click(object sender, EventArgs e)
         {
             changeForm(new UserGUIOperations());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

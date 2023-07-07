@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockTracking.UserGUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,28 +39,31 @@ namespace StockTracking.AdminGUI
         private void buttonUserControls_Click(object sender, EventArgs e)
         {
             string currentUserName = txtboxMainUsername.Text;
-            UserGUIMain userGUIMain = new UserGUIMain(currentUserName);
-            userGUIMain.Show();
-            this.Close();
+            changeForm(new UserGUIOperations());
         }
         
 
         private void buttonExit_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            var loginScreen = new LoginScreen();
+            loginScreen.ShowDialog();
+            loginScreen.Dispose();
         }
 
         private void buttonAdminControls_Click(object sender, EventArgs e)
         {
-            string currentUserName = txtboxMainUsername.Text;
-            AdminGUIMain adminGUIMain = new AdminGUIMain(currentUserName);
-            adminGUIMain.Show();
-            this.Close();
+            changeForm(new AdminGUIOperations());
         }
 
         private void buttonExceptions_Click(object sender, EventArgs e)
         {
-            changeForm(new AdminGUIExceptions());
+            changeForm(new AdminGUILognExc());
+        }
+
+        private void picboxExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

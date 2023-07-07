@@ -32,17 +32,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonGoBack = new System.Windows.Forms.Button();
+            this.buttonProductFunctions = new System.Windows.Forms.Button();
             this.panelSubForm = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtboxMainUsername = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonProductFunctions = new System.Windows.Forms.Button();
-            this.buttonGoBack = new System.Windows.Forms.Button();
+            this.picboxExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxExit)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -69,25 +70,38 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.panel3.Controls.Add(this.buttonGoBack);
             this.panel3.Controls.Add(this.buttonProductFunctions);
-            this.panel3.Controls.Add(this.buttonExit);
             this.panel3.Location = new System.Drawing.Point(0, 110);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(184, 462);
             this.panel3.TabIndex = 2;
             // 
-            // buttonExit
+            // buttonGoBack
             // 
-            this.buttonExit.FlatAppearance.BorderSize = 0;
-            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.buttonExit.Location = new System.Drawing.Point(-3, 378);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(187, 81);
-            this.buttonExit.TabIndex = 3;
-            this.buttonExit.Text = "ÇIKIŞ";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonGoBack.FlatAppearance.BorderSize = 0;
+            this.buttonGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGoBack.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonGoBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
+            this.buttonGoBack.Location = new System.Drawing.Point(3, 377);
+            this.buttonGoBack.Name = "buttonGoBack";
+            this.buttonGoBack.Size = new System.Drawing.Size(181, 85);
+            this.buttonGoBack.TabIndex = 6;
+            this.buttonGoBack.Text = "GERİ";
+            this.buttonGoBack.UseVisualStyleBackColor = true;
+            this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
+            // 
+            // buttonProductFunctions
+            // 
+            this.buttonProductFunctions.FlatAppearance.BorderSize = 0;
+            this.buttonProductFunctions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProductFunctions.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonProductFunctions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
+            this.buttonProductFunctions.Location = new System.Drawing.Point(0, 7);
+            this.buttonProductFunctions.Name = "buttonProductFunctions";
+            this.buttonProductFunctions.Size = new System.Drawing.Size(184, 85);
+            this.buttonProductFunctions.TabIndex = 5;
+            this.buttonProductFunctions.Text = "ÜRÜN İŞLEMLERİ";
+            this.buttonProductFunctions.UseVisualStyleBackColor = true;
+            this.buttonProductFunctions.Click += new System.EventHandler(this.buttonProductFunctions_Click);
             // 
             // panelSubForm
             // 
@@ -124,40 +138,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.picboxExit);
             this.panel2.Controls.Add(this.txtboxMainUsername);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(184, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(889, 76);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // buttonProductFunctions
+            // picboxExit
             // 
-            this.buttonProductFunctions.FlatAppearance.BorderSize = 0;
-            this.buttonProductFunctions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonProductFunctions.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonProductFunctions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.buttonProductFunctions.Location = new System.Drawing.Point(0, 7);
-            this.buttonProductFunctions.Name = "buttonProductFunctions";
-            this.buttonProductFunctions.Size = new System.Drawing.Size(184, 85);
-            this.buttonProductFunctions.TabIndex = 5;
-            this.buttonProductFunctions.Text = "ÜRÜN İŞLEMLERİ";
-            this.buttonProductFunctions.UseVisualStyleBackColor = true;
-            this.buttonProductFunctions.Click += new System.EventHandler(this.buttonProductFunctions_Click);
-            // 
-            // buttonGoBack
-            // 
-            this.buttonGoBack.FlatAppearance.BorderSize = 0;
-            this.buttonGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGoBack.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonGoBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.buttonGoBack.Location = new System.Drawing.Point(3, 287);
-            this.buttonGoBack.Name = "buttonGoBack";
-            this.buttonGoBack.Size = new System.Drawing.Size(181, 85);
-            this.buttonGoBack.TabIndex = 6;
-            this.buttonGoBack.Text = "GERİ";
-            this.buttonGoBack.UseVisualStyleBackColor = true;
-            this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
+            this.picboxExit.Image = ((System.Drawing.Image)(resources.GetObject("picboxExit.Image")));
+            this.picboxExit.Location = new System.Drawing.Point(821, 12);
+            this.picboxExit.Name = "picboxExit";
+            this.picboxExit.Size = new System.Drawing.Size(55, 48);
+            this.picboxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxExit.TabIndex = 7;
+            this.picboxExit.TabStop = false;
+            this.picboxExit.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // UserGUIMain
             // 
@@ -178,6 +177,7 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,12 +187,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Panel panelSubForm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtboxMainUsername;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonProductFunctions;
         private System.Windows.Forms.Button buttonGoBack;
+        private System.Windows.Forms.PictureBox picboxExit;
     }
 }

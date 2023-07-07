@@ -1,6 +1,6 @@
 ﻿namespace StockTracking.AdminGUI
 {
-    partial class AdminGUIModifyUser
+    partial class AdminGUIOperations
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.buttonModify = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.cmbboxUserType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtboxDBName = new System.Windows.Forms.TextBox();
@@ -116,28 +116,28 @@
             this.label5.TabIndex = 68;
             this.label5.Text = "Şifresi : ";
             // 
-            // buttonModify
+            // buttonSave
             // 
-            this.buttonModify.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(89)))));
-            this.buttonModify.FlatAppearance.BorderSize = 0;
-            this.buttonModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonModify.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.buttonModify.Location = new System.Drawing.Point(668, 9);
-            this.buttonModify.Name = "buttonModify";
-            this.buttonModify.Size = new System.Drawing.Size(172, 110);
-            this.buttonModify.TabIndex = 67;
-            this.buttonModify.Text = "KULLANICI GÜNCELLE";
-            this.buttonModify.UseVisualStyleBackColor = false;
-            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(89)))));
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.buttonSave.Location = new System.Drawing.Point(631, 9);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(209, 66);
+            this.buttonSave.TabIndex = 67;
+            this.buttonSave.Text = "KULLANICI KAYDET";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // cmbboxUserType
             // 
             this.cmbboxUserType.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbboxUserType.FormattingEnabled = true;
-            this.cmbboxUserType.Location = new System.Drawing.Point(175, 207);
+            this.cmbboxUserType.Location = new System.Drawing.Point(698, 170);
             this.cmbboxUserType.Name = "cmbboxUserType";
-            this.cmbboxUserType.Size = new System.Drawing.Size(324, 32);
+            this.cmbboxUserType.Size = new System.Drawing.Size(142, 32);
             this.cmbboxUserType.TabIndex = 66;
             // 
             // label4
@@ -145,12 +145,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.label4.Location = new System.Drawing.Point(101, 210);
+            this.label4.Location = new System.Drawing.Point(624, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 24);
             this.label4.TabIndex = 65;
             this.label4.Text = "Türü : ";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtboxDBName
             // 
@@ -249,23 +248,23 @@
             // 
             this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Location = new System.Drawing.Point(8, 286);
+            this.dgvList.Location = new System.Drawing.Point(8, 256);
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
-            this.dgvList.Size = new System.Drawing.Size(856, 168);
+            this.dgvList.Size = new System.Drawing.Size(856, 198);
             this.dgvList.TabIndex = 55;
             this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellClick);
             // 
             // buttonDelete
             // 
-            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(89)))));
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.buttonDelete.Location = new System.Drawing.Point(668, 129);
+            this.buttonDelete.Location = new System.Drawing.Point(631, 84);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(172, 110);
+            this.buttonDelete.Size = new System.Drawing.Size(209, 58);
             this.buttonDelete.TabIndex = 74;
             this.buttonDelete.Text = "KULLANICI SİL";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -277,7 +276,7 @@
             this.txtboxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtboxSearch.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtboxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.txtboxSearch.Location = new System.Drawing.Point(175, 247);
+            this.txtboxSearch.Location = new System.Drawing.Point(175, 207);
             this.txtboxSearch.Multiline = true;
             this.txtboxSearch.Name = "txtboxSearch";
             this.txtboxSearch.Size = new System.Drawing.Size(407, 30);
@@ -287,23 +286,25 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.panel7.Location = new System.Drawing.Point(175, 277);
+            this.panel7.Location = new System.Drawing.Point(175, 237);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(407, 1);
             this.panel7.TabIndex = 76;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.label8.Location = new System.Drawing.Point(11, 250);
+            this.label8.Location = new System.Drawing.Point(11, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(174, 24);
             this.label8.TabIndex = 75;
             this.label8.Text = "Kullanıcı Ara : ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // AdminGUIModifyUser
+            // AdminGUIOperations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -318,7 +319,7 @@
             this.Controls.Add(this.txtboxPassword);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.buttonModify);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.cmbboxUserType);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtboxDBName);
@@ -331,7 +332,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvList);
-            this.Name = "AdminGUIModifyUser";
+            this.Name = "AdminGUIOperations";
             this.Text = "AdminGUIModifyUser";
             this.Load += new System.EventHandler(this.AdminGUIModifyUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
@@ -348,7 +349,7 @@
         private System.Windows.Forms.TextBox txtboxPassword;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonModify;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.ComboBox cmbboxUserType;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtboxDBName;

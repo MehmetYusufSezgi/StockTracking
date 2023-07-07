@@ -34,11 +34,15 @@ namespace StockTrackingBusiness.Concrete
             return _productDAL.GetAll();
         }
 
-        public List<Product> GetProductsByName(string productName)
+        public Product GetProductByBarcode(string barcode)
         {
-            return _productDAL.GetAll(p=>p.ProductName.ToLower().Contains(productName.ToLower()));
+            return _productDAL.Get(p=>p.Barcode.Equals(barcode));
         }
 
+        public List<Product> GetProductsByBarcode(string barcode)
+        {
+            return _productDAL.GetAll(p=>p.Barcode.ToLower().Contains(barcode.ToLower()));
+        }
         public void Update(Product product)
         {
             _productDAL.Update(product);

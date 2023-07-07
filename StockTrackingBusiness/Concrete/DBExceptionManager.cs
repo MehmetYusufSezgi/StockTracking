@@ -26,5 +26,10 @@ namespace StockTrackingBusiness.Concrete
         {
             return _exceptionDAL.GetAll();
         }
+
+        public List<DBException> GetExceptionsByName(string exceptionUser)
+        {
+            return _exceptionDAL.GetAll(p => p.DBExceptionUser.ToLower().Contains(exceptionUser.ToLower()));
+        }
     }
 }

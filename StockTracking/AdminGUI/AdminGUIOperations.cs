@@ -15,9 +15,9 @@ using System.Windows.Forms;
 
 namespace StockTracking.AdminGUI
 {
-    public partial class AdminGUIModifyUser : Form
+    public partial class AdminGUIOperations : Form
     {
-        public AdminGUIModifyUser()
+        public AdminGUIOperations()
         {
             InitializeComponent();
             _userService = new UserManager(new EFUserDAL());
@@ -46,26 +46,51 @@ namespace StockTracking.AdminGUI
         ExceptionHandler exceptionHandler = new ExceptionHandler();
         private void buttonModify_Click(object sender, EventArgs e)
         {
+            string nameLog = txtboxUserName.Text;
+            User existingUser = _userService.GetUserByName(nameLog);
             exceptionHandler.TryCatcher(() =>
             {
-                _userService.Update(new User
+                if (existingUser != null)
                 {
-                    UserId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
-                    UserName = txtboxUserName.Text,
-                    UserMail = txtboxMail.Text,
-                    UserDBName = txtboxDBName.Text,
-                    Password = txtboxPassword.Text,
-                    PhoneNumber = txtboxPhoneNumber.Text,
-                    UserType = cmbboxUserType.SelectedValue.ToString()
-                });
-                LoadUsers();
-                MessageBox.Show("Kullanıcı Güncellendi.");
-                string currentName = NameCarrier.LoggedName;
-                _logService.Add(new Log
+                    _userService.Update(new User
+                    {
+                        UserId = Convert.ToInt32(dgvList.CurrentRow.Cells[0].Value),
+                        UserName = txtboxUserName.Text,
+                        UserMail = txtboxMail.Text,
+                        UserDBName = txtboxDBName.Text,
+                        Password = txtboxPassword.Text,
+                        PhoneNumber = txtboxPhoneNumber.Text,
+                        UserType = cmbboxUserType.SelectedValue.ToString()
+                    });
+                    LoadUsers();
+                    MessageBox.Show("Kullanıcı Güncellendi.");
+                    string currentName = NameCarrier.LoggedName;
+                    _logService.Add(new Log
+                    {
+                        LogUser = currentName,
+                        LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı güncelledi : {txtboxUserName.Text.ToUpper()}"
+                    });
+                }
+                else
                 {
-                    LogUser = currentName,
-                    LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı güncelledi : {txtboxUserName.Text.ToUpper()}"
-                });
+                    _userService.Add(new User
+                    {
+                        UserName = txtboxUserName.Text,
+                        UserMail = txtboxMail.Text,
+                        UserDBName = txtboxDBName.Text,
+                        Password = txtboxPassword.Text,
+                        PhoneNumber = txtboxPhoneNumber.Text,
+                        UserType = cmbboxUserType.SelectedValue.ToString()
+                    });
+                    LoadUsers();
+                    MessageBox.Show("Kullanıcı Eklendi.");
+                    string currentName = NameCarrier.LoggedName;
+                    _logService.Add(new Log
+                    {
+                        LogUser = currentName,
+                        LogMessage = $"{DateTime.Now} tarihinde {currentName.ToUpper()} kullanıcı ekledi : {txtboxUserName.Text.ToUpper()}"
+                    });
+                }
             });
         }
 
@@ -115,11 +140,6 @@ namespace StockTracking.AdminGUI
             });
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtboxSearch_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(txtboxSearch.Text))
@@ -130,6 +150,16 @@ namespace StockTracking.AdminGUI
             {
                 LoadUsers();
             }
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

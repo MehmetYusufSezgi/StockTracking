@@ -1,6 +1,6 @@
 ﻿namespace StockTracking.AdminGUI
 {
-    partial class AdminGUIListUser
+    partial class AdminGUILognExc
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,10 @@
             this.txtboxSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvList = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            this.dgvListException = new System.Windows.Forms.DataGridView();
+            this.dgvListLog = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListException)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListLog)).BeginInit();
             this.SuspendLayout();
             // 
             // txtboxSearch
@@ -67,29 +69,41 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Kullanıcı Ara : ";
             // 
-            // dgvList
+            // dgvListException
             // 
-            this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Location = new System.Drawing.Point(8, 64);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.ReadOnly = true;
-            this.dgvList.Size = new System.Drawing.Size(856, 375);
-            this.dgvList.TabIndex = 6;
+            this.dgvListException.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListException.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListException.Location = new System.Drawing.Point(8, 267);
+            this.dgvListException.Name = "dgvListException";
+            this.dgvListException.ReadOnly = true;
+            this.dgvListException.Size = new System.Drawing.Size(856, 172);
+            this.dgvListException.TabIndex = 6;
             // 
-            // AdminGUIListUser
+            // dgvListLog
+            // 
+            this.dgvListLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListLog.Location = new System.Drawing.Point(8, 89);
+            this.dgvListLog.Name = "dgvListLog";
+            this.dgvListLog.ReadOnly = true;
+            this.dgvListLog.Size = new System.Drawing.Size(856, 172);
+            this.dgvListLog.TabIndex = 10;
+            // 
+            // AdminGUILognExc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 458);
+            this.Controls.Add(this.dgvListLog);
             this.Controls.Add(this.txtboxSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvList);
-            this.Name = "AdminGUIListUser";
+            this.Controls.Add(this.dgvListException);
+            this.Name = "AdminGUILognExc";
             this.Text = "AdminGUIListUser";
             this.Load += new System.EventHandler(this.AdminGUIListUser_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListException)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,6 +114,7 @@
         private System.Windows.Forms.TextBox txtboxSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.DataGridView dgvListException;
+        private System.Windows.Forms.DataGridView dgvListLog;
     }
 }

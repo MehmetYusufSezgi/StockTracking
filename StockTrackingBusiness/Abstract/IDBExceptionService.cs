@@ -11,5 +11,6 @@ namespace StockTrackingBusiness.Abstract
     {
         void Add(DBException dbexception);
         List<DBException> GetAll();
+        List<DBException> GetExceptionsByName(string exceptionUser);
     }
 }

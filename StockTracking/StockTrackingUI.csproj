@@ -68,11 +68,11 @@
     <Compile Include="AdminGUI\AdminGUIExceptions.Designer.cs">
       <DependentUpon>AdminGUIExceptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminGUI\AdminGUIListUser.cs">
+    <Compile Include="AdminGUI\AdminGUILognExc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminGUI\AdminGUIListUser.Designer.cs">
-      <DependentUpon>AdminGUIListUser.cs</DependentUpon>
+    <Compile Include="AdminGUI\AdminGUILognExc.Designer.cs">
+      <DependentUpon>AdminGUILognExc.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminGUI\AdminGUILogs.cs">
       <SubType>Form</SubType>
@@ -80,23 +80,17 @@
     <Compile Include="AdminGUI\AdminGUILogs.Designer.cs">
       <DependentUpon>AdminGUILogs.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminGUI\AdminGUIMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminGUI\AdminGUIMain.Designer.cs">
-      <DependentUpon>AdminGUIMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminGUI\AdminGUIMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminGUI\AdminGUIMenu.Designer.cs">
       <DependentUpon>AdminGUIMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminGUI\AdminGUIModifyUser.cs">
+    <Compile Include="AdminGUI\AdminGUIOperations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminGUI\AdminGUIModifyUser.Designer.cs">
-      <DependentUpon>AdminGUIModifyUser.cs</DependentUpon>
+    <Compile Include="AdminGUI\AdminGUIOperations.Designer.cs">
+      <DependentUpon>AdminGUIOperations.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginScreen\LoginScreen.cs">
       <SubType>Form</SubType>
@@ -124,20 +118,17 @@
     <EmbeddedResource Include="AdminGUI\AdminGUIExceptions.resx">
       <DependentUpon>AdminGUIExceptions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminGUI\AdminGUIListUser.resx">
-      <DependentUpon>AdminGUIListUser.cs</DependentUpon>
+    <EmbeddedResource Include="AdminGUI\AdminGUILognExc.resx">
+      <DependentUpon>AdminGUILognExc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\AdminGUILogs.resx">
       <DependentUpon>AdminGUILogs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminGUI\AdminGUIMain.resx">
-      <DependentUpon>AdminGUIMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\AdminGUIMenu.resx">
       <DependentUpon>AdminGUIMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminGUI\AdminGUIModifyUser.resx">
-      <DependentUpon>AdminGUIModifyUser.cs</DependentUpon>
+    <EmbeddedResource Include="AdminGUI\AdminGUIOperations.resx">
+      <DependentUpon>AdminGUIOperations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>

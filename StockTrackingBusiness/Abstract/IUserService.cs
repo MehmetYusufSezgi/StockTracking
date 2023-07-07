@@ -12,6 +12,7 @@ namespace StockTrackingBusiness.Abstract
         void Add(User user);
         void Delete(User user);
         List<User> GetAll();
+        User GetUserByName(string existingUser);
         List<User> GetUsersByName(string userName);
         void Update(User user);
     }

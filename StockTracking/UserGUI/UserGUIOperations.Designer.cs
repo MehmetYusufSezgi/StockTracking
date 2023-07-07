@@ -49,13 +49,15 @@
             this.txtboxSellingPrice = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.buttonSell = new System.Windows.Forms.Button();
             this.txtboxSellingAmount = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.txtboxSearch = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +109,7 @@
             this.txtboxStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtboxStock.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtboxStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.txtboxStock.Location = new System.Drawing.Point(140, 46);
+            this.txtboxStock.Location = new System.Drawing.Point(140, 86);
             this.txtboxStock.Multiline = true;
             this.txtboxStock.Name = "txtboxStock";
             this.txtboxStock.Size = new System.Drawing.Size(309, 30);
@@ -116,7 +118,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.panel2.Location = new System.Drawing.Point(140, 76);
+            this.panel2.Location = new System.Drawing.Point(140, 116);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(330, 1);
             this.panel2.TabIndex = 10;
@@ -126,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.label2.Location = new System.Drawing.Point(1, 49);
+            this.label2.Location = new System.Drawing.Point(1, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 24);
             this.label2.TabIndex = 9;
@@ -138,7 +140,7 @@
             this.txtboxBarcode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtboxBarcode.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtboxBarcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.txtboxBarcode.Location = new System.Drawing.Point(140, 86);
+            this.txtboxBarcode.Location = new System.Drawing.Point(140, 47);
             this.txtboxBarcode.Multiline = true;
             this.txtboxBarcode.Name = "txtboxBarcode";
             this.txtboxBarcode.Size = new System.Drawing.Size(309, 30);
@@ -147,7 +149,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.panel3.Location = new System.Drawing.Point(140, 116);
+            this.panel3.Location = new System.Drawing.Point(140, 77);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(330, 1);
             this.panel3.TabIndex = 13;
@@ -157,7 +159,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.label3.Location = new System.Drawing.Point(12, 89);
+            this.label3.Location = new System.Drawing.Point(12, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 24);
             this.label3.TabIndex = 12;
@@ -276,35 +278,20 @@
             this.label7.TabIndex = 23;
             this.label7.Text = "Satış Fiyatı : ";
             // 
-            // buttonAdd
+            // buttonSave
             // 
-            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(89)))));
-            this.buttonAdd.FlatAppearance.BorderSize = 0;
-            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdd.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.buttonAdd.Location = new System.Drawing.Point(494, 131);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(315, 32);
-            this.buttonAdd.TabIndex = 26;
-            this.buttonAdd.Text = "ÜRÜN EKLE";
-            this.buttonAdd.UseVisualStyleBackColor = false;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(89)))));
-            this.buttonUpdate.FlatAppearance.BorderSize = 0;
-            this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUpdate.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.buttonUpdate.Location = new System.Drawing.Point(494, 169);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(168, 32);
-            this.buttonUpdate.TabIndex = 27;
-            this.buttonUpdate.Text = "DÜZENLE";
-            this.buttonUpdate.UseVisualStyleBackColor = false;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(89)))));
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.buttonSave.Location = new System.Drawing.Point(494, 131);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(315, 32);
+            this.buttonSave.TabIndex = 26;
+            this.buttonSave.Text = "KAYDET";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonSell
             // 
@@ -317,8 +304,9 @@
             this.buttonSell.Name = "buttonSell";
             this.buttonSell.Size = new System.Drawing.Size(168, 32);
             this.buttonSell.TabIndex = 28;
-            this.buttonSell.Text = "ÜRÜN SAT";
+            this.buttonSell.Text = "SAT";
             this.buttonSell.UseVisualStyleBackColor = false;
+            this.buttonSell.Click += new System.EventHandler(this.buttonSell_Click);
             // 
             // txtboxSellingAmount
             // 
@@ -360,13 +348,45 @@
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDelete.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.buttonDelete.Location = new System.Drawing.Point(668, 169);
+            this.buttonDelete.Location = new System.Drawing.Point(494, 169);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(141, 32);
+            this.buttonDelete.Size = new System.Drawing.Size(315, 32);
             this.buttonDelete.TabIndex = 32;
             this.buttonDelete.Text = "SİL";
             this.buttonDelete.UseVisualStyleBackColor = false;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // txtboxSearch
+            // 
+            this.txtboxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtboxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtboxSearch.Font = new System.Drawing.Font("Bookman Old Style", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtboxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
+            this.txtboxSearch.Location = new System.Drawing.Point(140, 171);
+            this.txtboxSearch.Multiline = true;
+            this.txtboxSearch.Name = "txtboxSearch";
+            this.txtboxSearch.Size = new System.Drawing.Size(309, 30);
+            this.txtboxSearch.TabIndex = 35;
+            this.txtboxSearch.TextChanged += new System.EventHandler(this.txtboxSearch_TextChanged);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
+            this.panel8.Location = new System.Drawing.Point(140, 201);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(330, 1);
+            this.panel8.TabIndex = 34;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
+            this.label9.Location = new System.Drawing.Point(-5, 178);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 24);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Barkod Ara : ";
             // 
             // UserGUIOperations
             // 
@@ -374,13 +394,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(873, 458);
+            this.Controls.Add(this.txtboxSearch);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.txtboxSellingAmount);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonSell);
-            this.Controls.Add(this.buttonUpdate);
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.txtboxSellingPrice);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.label7);
@@ -434,12 +456,14 @@
         private System.Windows.Forms.TextBox txtboxSellingPrice;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonSell;
         private System.Windows.Forms.TextBox txtboxSellingAmount;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.TextBox txtboxSearch;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label9;
     }
 }

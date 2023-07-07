@@ -32,6 +32,7 @@
             this.panelSubForm = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonLogs = new System.Windows.Forms.Button();
             this.buttonUserControls = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonAdminControls = new System.Windows.Forms.Button();
@@ -39,11 +40,12 @@
             this.txtboxMainUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonExceptions = new System.Windows.Forms.Button();
+            this.picboxExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxExit)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSubForm
@@ -67,7 +69,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panel3.Controls.Add(this.buttonExceptions);
+            this.panel3.Controls.Add(this.buttonLogs);
             this.panel3.Controls.Add(this.buttonUserControls);
             this.panel3.Controls.Add(this.buttonExit);
             this.panel3.Controls.Add(this.buttonAdminControls);
@@ -75,6 +77,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(184, 462);
             this.panel3.TabIndex = 6;
+            // 
+            // buttonLogs
+            // 
+            this.buttonLogs.FlatAppearance.BorderSize = 0;
+            this.buttonLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogs.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonLogs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
+            this.buttonLogs.Location = new System.Drawing.Point(3, 246);
+            this.buttonLogs.Name = "buttonLogs";
+            this.buttonLogs.Size = new System.Drawing.Size(181, 94);
+            this.buttonLogs.TabIndex = 5;
+            this.buttonLogs.Text = "KAYITLAR";
+            this.buttonLogs.UseVisualStyleBackColor = true;
+            this.buttonLogs.Click += new System.EventHandler(this.buttonExceptions_Click);
             // 
             // buttonUserControls
             // 
@@ -100,7 +116,7 @@
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(187, 81);
             this.buttonExit.TabIndex = 3;
-            this.buttonExit.Text = "ÇIKIŞ";
+            this.buttonExit.Text = "GERİ";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click_1);
             // 
@@ -154,6 +170,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.picboxExit);
             this.panel2.Controls.Add(this.txtboxMainUsername);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(184, -1);
@@ -161,19 +178,16 @@
             this.panel2.Size = new System.Drawing.Size(889, 76);
             this.panel2.TabIndex = 7;
             // 
-            // buttonExceptions
+            // picboxExit
             // 
-            this.buttonExceptions.FlatAppearance.BorderSize = 0;
-            this.buttonExceptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExceptions.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.buttonExceptions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(200)))), ((int)(((byte)(85)))));
-            this.buttonExceptions.Location = new System.Drawing.Point(3, 246);
-            this.buttonExceptions.Name = "buttonExceptions";
-            this.buttonExceptions.Size = new System.Drawing.Size(181, 94);
-            this.buttonExceptions.TabIndex = 5;
-            this.buttonExceptions.Text = "HATA KAYITLARI";
-            this.buttonExceptions.UseVisualStyleBackColor = true;
-            this.buttonExceptions.Click += new System.EventHandler(this.buttonExceptions_Click);
+            this.picboxExit.Image = ((System.Drawing.Image)(resources.GetObject("picboxExit.Image")));
+            this.picboxExit.Location = new System.Drawing.Point(821, 12);
+            this.picboxExit.Name = "picboxExit";
+            this.picboxExit.Size = new System.Drawing.Size(55, 48);
+            this.picboxExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picboxExit.TabIndex = 8;
+            this.picboxExit.TabStop = false;
+            this.picboxExit.Click += new System.EventHandler(this.picboxExit_Click);
             // 
             // AdminGUIMenu
             // 
@@ -193,6 +207,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxExit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,6 +224,7 @@
         private System.Windows.Forms.TextBox txtboxMainUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonExceptions;
+        private System.Windows.Forms.Button buttonLogs;
+        private System.Windows.Forms.PictureBox picboxExit;
     }
 }
