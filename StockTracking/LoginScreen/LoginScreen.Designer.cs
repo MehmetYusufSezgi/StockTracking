@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chkboxRememberMe = new System.Windows.Forms.CheckBox();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonLogin = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.panel2.Controls.Add(this.chkboxRememberMe);
             this.panel2.Controls.Add(this.buttonExit);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.buttonLogin);
@@ -86,7 +88,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(460, 296);
             this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // chkboxRememberMe
+            // 
+            this.chkboxRememberMe.AutoSize = true;
+            this.chkboxRememberMe.Font = new System.Drawing.Font("Bookman Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chkboxRememberMe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(202)))), ((int)(((byte)(89)))));
+            this.chkboxRememberMe.Location = new System.Drawing.Point(55, 168);
+            this.chkboxRememberMe.Name = "chkboxRememberMe";
+            this.chkboxRememberMe.Size = new System.Drawing.Size(161, 28);
+            this.chkboxRememberMe.TabIndex = 9;
+            this.chkboxRememberMe.Text = "Beni Hatırla";
+            this.chkboxRememberMe.UseVisualStyleBackColor = true;
             // 
             // buttonExit
             // 
@@ -99,7 +112,7 @@
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(215, 27);
             this.buttonExit.TabIndex = 8;
-            this.buttonExit.Text = "ÇIKIŞ";
+            this.buttonExit.Text = "HESAP ÇIKIŞ";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
@@ -141,7 +154,6 @@
             this.txtboxPassword.PasswordChar = '●';
             this.txtboxPassword.Size = new System.Drawing.Size(309, 30);
             this.txtboxPassword.TabIndex = 5;
-            this.txtboxPassword.TextChanged += new System.EventHandler(this.txtboxPassword_TextChanged);
             // 
             // txtboxUsername
             // 
@@ -227,6 +239,7 @@
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.CheckBox chkboxRememberMe;
     }
 }
 

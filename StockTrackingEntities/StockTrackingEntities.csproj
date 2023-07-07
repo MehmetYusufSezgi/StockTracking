@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,7 @@
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\DBException.cs" />
     <Compile Include="Concrete\Log.cs" />
+    <Compile Include="Concrete\LoginData.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

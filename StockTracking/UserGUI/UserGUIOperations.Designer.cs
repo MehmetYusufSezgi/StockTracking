@@ -319,7 +319,6 @@
             this.txtboxSellingAmount.Name = "txtboxSellingAmount";
             this.txtboxSellingAmount.Size = new System.Drawing.Size(47, 30);
             this.txtboxSellingAmount.TabIndex = 31;
-            this.txtboxSellingAmount.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel7
             // 
@@ -328,7 +327,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(53, 1);
             this.panel7.TabIndex = 30;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // label8
             // 

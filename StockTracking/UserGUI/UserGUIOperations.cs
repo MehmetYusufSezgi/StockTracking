@@ -98,18 +98,6 @@ namespace StockTracking.UserGUI
             LoadProducts();
             LoadCategories();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             exceptionHandler.TryCatcher(() =>

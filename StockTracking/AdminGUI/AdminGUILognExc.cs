@@ -29,7 +29,9 @@ namespace StockTracking.AdminGUI
         private void LoadLognEx()
         {
             dgvListException.DataSource = _exceptionService.GetAll();
+            dgvListException.Columns[0].Visible = false;
             dgvListLog.DataSource = _logService.GetAll();
+            dgvListLog.Columns[0].Visible = false;
         }
         private void AdminGUIListUser_Load(object sender, EventArgs e)
         {

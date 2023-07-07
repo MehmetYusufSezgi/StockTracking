@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 //Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=DBStockTrack;Integrated Security=True
 namespace StockTracking
@@ -22,12 +23,33 @@ namespace StockTracking
         public LoginScreen()
         {
             InitializeComponent();
+            _loginDataService = new LoginDataManager(new EFLoginDataDAL());
+            using(var context = new StockTrackingContext())
+            {
+                var loginChecking = context.LoginData.FirstOrDefault(u => u.IsCheckedLOGIN == true);
+                if (loginChecking.IsCheckedLOGIN)
+                {
+                    CurrentUserName = loginChecking.CurrentNameLOGIN;
+                    var userType = context.Users.FirstOrDefault(u => u.UserName == CurrentUserName);
+                    if(userType.UserType == "admin")
+                    {
+                        this.Hide();
+                        var adminGUIMenu = new AdminGUIMenu(CurrentUserName);
+                        adminGUIMenu.ShowDialog();
+                        adminGUIMenu.Dispose();
+                    }
+                    else if(userType.UserType == "kullanici")
+                    {
+                        this.Hide();
+                        var userGUIMain = new UserGUIMain(CurrentUserName);
+                        userGUIMain.ShowDialog();
+                        userGUIMain.Dispose();
+                    }
+                }
+            }
         }
+        ILoginDataService _loginDataService;
         
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             string username = txtboxUsername.Text;
@@ -38,11 +60,27 @@ namespace StockTracking
                 using (var context = new StockTrackingContext())
                 {
                     var user = context.Users.FirstOrDefault(u => u.UserName.ToLower() == username.ToLower());
-
+                    var loginChecking = context.LoginData.FirstOrDefault(u => u.IsCheckedLOGIN);
                     if (user != null)
                     {
                         CurrentUserName = user.UserName;
                         NameCarrier.LoggedName = CurrentUserName;
+                        if (chkboxRememberMe.Checked)
+                        {
+                            _loginDataService.Update(new LoginData
+                            {
+                                CurrentNameLOGIN = CurrentUserName,
+                                CurrentPasswordLOGIN = password,
+                                IsCheckedLOGIN = true
+                            });
+                        }
+                        else
+                        {
+                            _loginDataService.Update(new LoginData
+                            {
+                                IsCheckedLOGIN = false
+                            });
+                        }
                         if (user.UserType == "admin")
                         {
                             this.Hide();
@@ -77,13 +115,6 @@ namespace StockTracking
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        
-
-        private void txtboxPassword_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
